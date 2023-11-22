@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '@angular/core';
 import {
   ApplicationRef,
@@ -40,8 +40,6 @@ import { ToastrService } from './toastr.service';
     <div class="toast-progress" [style.width]="width + '%'"></div>
   </div>
   `,
-  standalone: true,
-  imports: [NgIf]
 })
 export class ToastNoAnimation implements OnDestroy {
   message?: string | null;
@@ -222,7 +220,8 @@ export const DefaultNoAnimationsGlobalConfig: GlobalConfig = {
 };
 
 @NgModule({
-  imports: [ToastNoAnimation],
+  imports: [CommonModule],
+  declarations: [ToastNoAnimation],
   exports: [ToastNoAnimation],
 })
 export class ToastNoAnimationModule {

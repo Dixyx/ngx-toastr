@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { GhButtonModule } from '@ctrl/ngx-github-buttons';
 
-import { ToastNoAnimationModule, ToastContainerDirective } from '../lib/public_api';
+import { ToastrModule, ToastContainerModule, ToastNoAnimationModule } from '../lib/public_api';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,7 +14,6 @@ import { HomeComponent } from './home/home.component';
 import { NotyfToast } from './notyf.toast';
 import { PinkToast } from './pink.toast';
 import { BootstrapToast } from './bootstrap.toast';
-import { provideToastr } from '../lib/toastr/toast.provider';
 
 @NgModule({
   declarations: [
@@ -31,10 +30,10 @@ import { provideToastr } from '../lib/toastr/toast.provider';
     FormsModule,
     BrowserAnimationsModule,
     ToastNoAnimationModule,
-    ToastContainerDirective,
+    ToastrModule.forRoot(),
+    ToastContainerModule,
     GhButtonModule,
   ],
-  providers: [provideToastr()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

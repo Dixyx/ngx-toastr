@@ -10,9 +10,8 @@ import {
   HostBinding,
   HostListener,
   NgZone,
-  OnDestroy,
+  OnDestroy
 } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { IndividualConfig, ToastPackage } from './toastr-config';
 import { ToastrService } from './toastr.service';
@@ -44,17 +43,15 @@ import { ToastrService } from './toastr.service';
       state('removed', style({ opacity: 0 })),
       transition(
         'inactive => active',
-        animate('{{ easeTime }}ms {{ easing }}'),
+        animate('{{ easeTime }}ms {{ easing }}')
       ),
       transition(
         'active => removed',
-        animate('{{ easeTime }}ms {{ easing }}'),
-      ),
-    ]),
+        animate('{{ easeTime }}ms {{ easing }}')
+      )
+    ])
   ],
-  preserveWhitespaces: false,
-  standalone: true,
-  imports: [ NgIf ],
+  preserveWhitespaces: false
 })
 export class Toast<ConfigPayload = any> implements OnDestroy {
   message?: string | null;
@@ -209,7 +206,7 @@ export class Toast<ConfigPayload = any> implements OnDestroy {
       clearTimeout(this.timeout);
       this.options.timeOut = 0;
       this.hideTime = 0;
-
+  
       // disable progressBar
       clearInterval(this.intervalId);
       this.width = 0;
