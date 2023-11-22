@@ -37,6 +37,5 @@
     "toastr",
     "angular toastr",
     "notifications"
-  ],
-  "ng-update": {}
+  ]
 }
