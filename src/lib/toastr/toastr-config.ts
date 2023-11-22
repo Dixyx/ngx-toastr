@@ -196,6 +196,7 @@ export class ToastPackage<ConfigPayload = any> {
   }
 }
 
+/* eslint-disable @typescript-eslint/no-empty-interface */
 /** @deprecated use GlobalConfig */
 export interface GlobalToastrConfig extends GlobalConfig {}
 /** @deprecated use IndividualConfig */
